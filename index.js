@@ -5,16 +5,14 @@ function errorApp(error) {
   throw new Error(chalk.red(error.code, "Arquivo não encontrado"))
 };
 
-function fileCatch(fileDir) {
-  const enconding = "utf-8";
-
-  fs.readFile(fileDir, enconding, (error, text) => {
-    if (error) {
-      errorApp(error);
-    }
-
-    console.log(chalk.bgGreen(text));
-  });
+async function fileCatch(fileDir) {
+  try {
+    const enconding = "utf-8";
+    const text = await fs.promises.readFile(fileDir, enconding)
+    console.log(chalk.green(text))
+  } catch (error) {
+    errorApp(error)
+  }
 };
 
 fileCatch("./arquivos/texto.md");
