@@ -14,7 +14,7 @@ function linksExtract(text) {
     [catchText[1]]: catchText[2]
   }));
 
-  return results;
+  return results.length !== 0 ? results : "Não há links no arquivo";
 }
 
 async function fileCatch(fileDir) {
@@ -22,10 +22,10 @@ async function fileCatch(fileDir) {
     const enconding = "utf-8";
     const text = await fs.promises.readFile(fileDir, enconding);
 
-    console.log(linksExtract(text));
+    return linksExtract(text);
   } catch (error) {
     errorApp(error)
   }
 };
 
-fileCatch("./arquivos/texto.md");
+export default fileCatch;
