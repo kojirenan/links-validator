@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import fs from "fs";
 import fileCatch from "./index.js";
-import valideList from "./http-valide.js";
+import validatedList from "./http-valide.js";
 
 const path = process.argv;
 
@@ -10,7 +10,7 @@ async function printList(valide, result, id = '') {
     console.log(
       chalk.yellow("Lista  Validada"),
       chalk.black.bgGreen(id),
-      await valideList(result)
+      await validatedList(result)
     );
   } else {
     console.log(
