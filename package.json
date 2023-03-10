@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cli": "node ./src/cli.js"
+    "cli": "node ./src/cli.js ./files/text.md",
+    "cli:valide": "node ./src/cli.js ./files/text.md --valide"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alura-cursos/2708-node-lib-md.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Renan Koji",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alura-cursos/2708-node-lib-md/issues"
